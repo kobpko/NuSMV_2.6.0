@@ -184,6 +184,19 @@ int Be_Cnf_GetMaxVarIndex(const Be_Cnf_ptr self)
 {
   return self->cnfMaxVarIdx;
 }
+// zhangjiaqi 
+void print_cnf(const Be_Cnf_ptr self)
+{
+  FILE *fzhangjiaqi = fopen("test.txt","w");
+  printf("cnf slist:cnfClauses %d\n", Slist_get_size(self->cnfClauses));
+  printf("cnf slist:cnfVars %d\n", Slist_get_size(self->cnfVars));
+  printf("cnf slist:cnfMaxVarIdx %d\n", self->cnfMaxVarIdx);
+  printf("cnf slist:formulaLiteral %d\n", self->formulaLiteral);
+  print_snode(self->cnfVars);
+  print_snode(self->cnfClauses);
+  fclose(fzhangjiaqi);
+  Be_Cnf_PrintStat(self,fzhangjiaqi,"zhangjiaqi");
+}
 
 size_t Be_Cnf_GetVarsNumber(const Be_Cnf_ptr self)
 {

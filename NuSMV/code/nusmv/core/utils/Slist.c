@@ -486,7 +486,7 @@ void Slist_printf(Slist_ptr const self){
   SLIST_CHECK_INSTANCE(self);
   SLIST_FOREACH(self, iter) {
     void* element = Siter_element(iter);
-    printf_node(NODE_PTR(element));
+    //printf_node(NODE_PTR(element));
     //if (NULL == printer) {
       //printf_node(wffprint, NODE_PTR(element));
    // }
@@ -496,6 +496,20 @@ void Slist_printf(Slist_ptr const self){
   }
 
 }
+
+//zhangjiaqi test
+void print_snode(Slist_ptr const self){
+  Snode_ptr slit = self->first;
+  printf("cnf slist %d", slit);
+  while(slit!=NULL){
+    printf("node %d", slit->element);
+    slit = slit->next;
+  }
+  
+}
+
+
+
 
 /*---------------------------------------------------------------------------*/
 /* Definition of internal functions                                          */
