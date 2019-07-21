@@ -39,6 +39,7 @@
 #include "nusmv/core/be/beRbcManager.h"
 #include "nusmv/core/be/be.h"
 #include "nusmv/core/be/beInt.h"
+#include <stdio.h>
 
 #include "nusmv/core/rbc/rbc.h"
 #include "nusmv/core/rbc/InlineResult.h"
@@ -269,14 +270,14 @@ Be_Cnf_ptr Be_ConvertToCnf(Be_Manager_ptr manager, be_ptr f, int polarity,
 
   if (opt_verbose_level_gt(opts, 1)) {
     Logger_ptr logger = LOGGER(NuSMVEnv_get_value(env, ENV_LOGGER));
-    Logger_log(logger, " Conversion returned maximum variable index = %d\n",
+    Logger_log(logger, "  = %d\n",
             Be_Cnf_GetMaxVarIndex(cnf));
     Logger_log(logger, " Length of list of clauses = %" PRIuPTR "\n",
             Be_Cnf_GetClausesNumber(cnf));
     Logger_log(logger, " Length of list of variables = %" PRIuPTR "\n",
             Be_Cnf_GetVarsNumber(cnf));
   }
-
+  printf("Conversion returned maximum variable index\n");
   Be_Cnf_SetFormulaLiteral(cnf, literalAssignedToWholeFormula);
   return cnf;
 }

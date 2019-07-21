@@ -647,6 +647,8 @@ nusmv/core/be/be.h
 /home/zhangjiaqi/Documents/NuSMV-2.6.0/NuSMV/code/nusmv/core/be/nusmv/core/be/be.h
 nusmv/core/be/beInt.h
 /home/zhangjiaqi/Documents/NuSMV-2.6.0/NuSMV/code/nusmv/core/be/nusmv/core/be/beInt.h
+stdio.h
+-
 nusmv/core/rbc/rbc.h
 /home/zhangjiaqi/Documents/NuSMV-2.6.0/NuSMV/code/nusmv/core/be/nusmv/core/rbc/rbc.h
 nusmv/core/rbc/InlineResult.h
