@@ -278,6 +278,7 @@ Be_Cnf_ptr Be_ConvertToCnf(Be_Manager_ptr manager, be_ptr f, int polarity,
             Be_Cnf_GetVarsNumber(cnf));
   }
   printf("Conversion returned maximum variable index\n");
+  Slist_printf(cnf->cnfClauses);
   Be_Cnf_SetFormulaLiteral(cnf, literalAssignedToWholeFormula);
   return cnf;
 }

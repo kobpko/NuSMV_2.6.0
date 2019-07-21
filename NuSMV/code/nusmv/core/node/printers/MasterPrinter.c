@@ -204,8 +204,7 @@ int print_node(MasterPrinter_ptr wff_printer, FILE *stream, node_ptr n)
 }
 
 /* test */
-int printf_node(MasterPrinter_ptr self,
-                              node_ptr n)
+int printf_node(node_ptr n)
 {
   ListIter_ptr iter;
   iter = NodeList_get_first_iter(MASTER_NODE_WALKER(self)->walkers);

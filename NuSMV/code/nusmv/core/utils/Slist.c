@@ -486,7 +486,7 @@ void Slist_printf(Slist_ptr const self){
   SLIST_CHECK_INSTANCE(self);
   SLIST_FOREACH(self, iter) {
     void* element = Siter_element(iter);
-
+    printf_node(NODE_PTR(element));
     //if (NULL == printer) {
       //printf_node(wffprint, NODE_PTR(element));
    // }
