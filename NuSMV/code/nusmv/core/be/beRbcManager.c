@@ -276,7 +276,7 @@ Be_Cnf_ptr Be_ConvertToCnf(Be_Manager_ptr manager, be_ptr f, int polarity,
     Logger_log(logger, " Length of list of variables = %" PRIuPTR "\n",
             Be_Cnf_GetVarsNumber(cnf));
   }
-
+  Slist_printf(cnf->cnfClauses);
   Be_Cnf_SetFormulaLiteral(cnf, literalAssignedToWholeFormula);
   return cnf;
 }

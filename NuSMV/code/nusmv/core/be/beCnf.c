@@ -245,6 +245,46 @@ void Be_Cnf_PrintStat(const Be_Cnf_ptr self, FILE* outFile, char* prefix)
             prefix,
             max_clause_size);
 }
+void Be_Cnf_Print(const Be_Cnf_ptr self)
+{
+  /* compute values */
+  int max_clause_size = 0;
+  float sum_clause_size = 0;
+  Siter cnf;
+
+  nusmv_assert(self != (Be_Cnf_ptr)NULL);
+
+  SLIST_FOREACH(Be_Cnf_GetClausesList(self), cnf) {
+    int* clause = (int*)Siter_element(cnf);
+    int clause_size;
+    Slist_printf((Slist_ptr)clause);
+    SLIST_CHECK_INSTANCE(Be_Cnf_GetClausesList(self));
+
+    for (clause_size = 0; clause[clause_size] != 0; ++clause_size) { }
+
+    sum_clause_size += clause_size;
+    if (clause_size > max_clause_size) max_clause_size = clause_size;
+  }
+
+  /* print out values */
+    // fprintf(outFile,
+    //         "%s Clause number: %i\n"
+    //         "%s Var number: %i\n"
+    //         "%s Max var index: %i\n"
+    //         "%s Average clause size: %.2f\n"
+    //         "%s Max clause size: %i\n",
+    //         prefix,
+    //         (int)Be_Cnf_GetClausesNumber(self),
+    //         prefix,
+    //         (int)Be_Cnf_GetVarsNumber(self),
+    //         prefix,
+    //         Be_Cnf_GetMaxVarIndex(self),
+    //         prefix,
+    //         /* the average clause size */
+    //         (double)(sum_clause_size / Slist_get_size(Be_Cnf_GetClausesList(self))),
+    //         prefix,
+    //         max_clause_size);
+}
 
 /*!
   \brief Frees the array used to store the clause.
