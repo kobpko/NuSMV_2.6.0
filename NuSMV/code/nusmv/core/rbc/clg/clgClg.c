@@ -39,6 +39,7 @@ This file is part of the ``rbc.clg'' package
 #include "nusmv/core/node/NodeMgr.h"
 #include "nusmv/core/utils/ErrorMgr.h"
 #include "nusmv/core/rbc/clg/clgInt.h"
+#include <stdio.h>
 
 #include "nusmv/core/node/node.h"
 #include "nusmv/core/utils/error.h"
@@ -259,7 +260,7 @@ static void Extract(const NuSMVEnv_ptr env, clause_graph head,
          approach would be to add a field type or kind to the clg_graph so
          that it can be LITERAL, CONJ, DISJ */
       if (elem->head->left == NULL && elem->head->right == NULL) {
-
+        printf("elem->head->label:%d ",elem->head->label);
         switch (type) {
         case CLG_DIMACS:
         case CLG_NUSMV:
