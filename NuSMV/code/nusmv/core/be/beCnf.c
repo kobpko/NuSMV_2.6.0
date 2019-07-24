@@ -270,7 +270,7 @@ void Be_Cnf_Print(const Be_Cnf_ptr self)
   SLIST_FOREACH(Be_Cnf_GetClausesList(self), cnf) {
     int* clause = (int*)Siter_element(cnf);
     int clause_size;
-    Slist_printf((Slist_ptr)clause);
+    // Slist_printf((Slist_ptr)clause);
     SLIST_CHECK_INSTANCE(Be_Cnf_GetClausesList(self));
 
     for (clause_size = 0; clause[clause_size] != 0; ++clause_size) { }
