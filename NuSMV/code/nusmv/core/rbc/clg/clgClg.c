@@ -226,7 +226,7 @@ static void Extract(const NuSMVEnv_ptr env, clause_graph head,
     NODE_MGR(NuSMVEnv_get_value(env, ENV_NODE_MGR));
   const ErrorMgr_ptr errmgr =
     ERROR_MGR(NuSMVEnv_get_value(env, ENV_ERROR_MANAGER));
-
+  
   array_t* extract_array = NULL;
   int index = 0;
   int array_size = 10;
@@ -245,7 +245,7 @@ static void Extract(const NuSMVEnv_ptr env, clause_graph head,
   extract_array = array_alloc(Extract_Elem, array_size);
 
   extract_array_push(extract_array, head, follow, clause_size, index);
-
+  printf("elem->head->label split: \n");
   while (index > 0) {
 
     extract_array_pop(extract_array, index, elem, tmp);
