@@ -500,10 +500,13 @@ void Slist_printf(Slist_ptr const self){
 //zhangjiaqi test
 void print_snode(Slist_ptr const self){
   Snode_ptr slit = self->first;
-  printf("cnf slist %d", slit);
+  int i = 0;
+  printf("%d", slit);
   while(slit!=NULL){
-    printf("node %d", slit->element);
+    printf("  node%d ",i);
+    printf("%d\n", slit->element);
     slit = slit->next;
+    i++;
   }
   
 }
